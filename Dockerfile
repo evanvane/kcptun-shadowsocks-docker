@@ -8,8 +8,8 @@ RUN mkdir -p /var/log/supervisor
 RUN yum install -y wget
 RUN wget ftp://admin:renjunyu@ren.renjunyu.cn/AiDisk_a1/ftp/kcptun -O /usr/bin/kcptun
 RUN chmod +x /usr/bin/kcptun
-ADD zzsupervisord.conf /etc/supervisord.conf
-
+ADD supervisord.conf /etc/supervisord.conf
+ADD config.json /etc/config.json
 
 #set port
 EXPOSE 8989/tcp
