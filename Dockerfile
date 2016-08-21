@@ -6,7 +6,7 @@ RUN yum -y install python-setuptools && easy_install supervisor && easy_install 
 RUN mkdir -p /var/log/supervisor
 
 RUN yum install -y wget
-RUN wget ftp://admin:renjunyu@ren.renjunyu.cn/AiDisk_a1/ftp/kcptun -O /usr/bin/kcptun
+RUN wget https://github.com/renjunyu/kcptun-shadowsocks-docker/raw/master/kcptun -O /usr/bin/kcptun
 RUN chmod +x /usr/bin/kcptun
 ADD supervisord.conf /etc/supervisord.conf
 
