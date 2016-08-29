@@ -27,9 +27,9 @@ ENV SS_PASSWORD=123456 SS_PORT=666 SS_METHOD=CHACHA20 KCP_PORT=45445 KCP_MTU=140
 ENV SS_PROTOCOL=auth_sha1_v2 SS_OBFS=tls1.2_ticket_auth
 #set port
 
-EXPOSE $$SS_PORT/tcp
-EXPOSE $$SS_PORT/udp
-EXPOSE $$KCP_PORT/udp
+EXPOSE $SS_PORT/tcp
+EXPOSE $SS_PORT/udp
+EXPOSE $KCP_PORT/udp
   
 #run supervisor
 CMD ["/usr/bin/supervisord"]
