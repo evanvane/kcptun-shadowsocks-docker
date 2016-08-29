@@ -18,7 +18,7 @@ RUN wget https://github.com/xtaci/kcptun/releases/download/v20160826/kcptun-linu
     tar zxf kcptun-linux-amd64-20160826.tar.gz && \
     mv server_linux_amd64 /usr/bin/kcptun && \
     rm -rf kcptun-linux-amd64-20160826.tar.gz &&\
-    rm -rf client_linux_amd64 &&\
+    rm -rf client_linux_amd64
 ADD shadowsocks.json /etc/shadowsocks.json
 RUN chmod +x /usr/bin/kcptun
 ADD supervisord.conf /etc/supervisord.conf
