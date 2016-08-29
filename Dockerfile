@@ -14,11 +14,7 @@ RUN wget https://download.libsodium.org/libsodium/releases/LATEST.tar.gz && \
     rm -rf libsodium*
 RUN mkdir -p /var/log/supervisor
 RUN git clone -b manyuser https://github.com/breakwa11/shadowsocks.git /etc/shadowsocks
-RUN wget https://github.com/xtaci/kcptun/releases/download/v20160826/kcptun-linux-amd64-20160826.tar.gz && \
-    tar zxf kcptun-linux-amd64-20160826.tar.gz && \
-    mv -i server_linux_amd64 /usr/bin/kcptun && \
-    rm -rf kcptun-linux-amd64-20160826.tar.gz &&\
-    rm -rf client_linux_amd64
+ADD kcptun /usr/bin/kcptun
 ADD shadowsocks.json /etc/shadowsocks.json
 RUN chmod +x /usr/bin/kcptun
 ADD supervisord.conf /etc/supervisord.conf
